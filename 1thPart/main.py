@@ -2,9 +2,10 @@ from tinkoff_voicekit_client import ClientSTT
 import argparse
 import sys
 
-from custom_exceptions import AudioConfigException, PathException, AuthException
+from custom_exceptions import *
 from jsonschema import exceptions as clientSTT_exceptions
 from grpc import _channel
+from psycopg2 import OperationalError
 
 from services import _check_audio_stage, \
                      _create_unique_id, \
@@ -40,7 +41,13 @@ def get_response_with_recognized_file(audio_config: dict, path: str):
 
 if __name__ == '__main__':
     # создаст необходимые таблицы в БД, если их нет
-    _execute_queries(initial_sql_operators)
+    try:
+        _execute_queries(initial_sql_operators)
+    except OperationalError as err:
+        logger.error(err)
+        raise DBConfigException(
+            '\nPlease, check values in db configuration (config.py/db_config)'
+            )
 
     client = ClientSTT(API_KEY, SECRET_KEY)
 

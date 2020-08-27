@@ -8,3 +8,6 @@ class PathException(Exception):
 
 class AuthException(Exception):
     pass
+
+class DBConfigException(Exception):
+    pass
