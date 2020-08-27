@@ -18,9 +18,9 @@ git clone https://github.com/NikoPushkin/audio-info-logger
 </li>
 <li><h4>Указать все необходимые ключи для работы с API в config.py</h4></li>
 
-<li><h4>Указать необходимые настройки распознавания в config.py</h4></li>
+<li><h4>Указать необходимые настройки распознавания в config.py/audio_config</h4></li>
 
-<li><h4>Указать необходимые настройки для базы данных в config.py</h4></li>
+<li><h4>Указать необходимые настройки для базы данных в config.py/db_config</h4></li>
 </ul>
 
 
