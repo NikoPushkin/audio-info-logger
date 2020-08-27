@@ -3,14 +3,18 @@
 <ul><h2>Для установки и работы:</h2>
 
 <li><h4>Клонировать репозиторий:</h4>
+  
 ```
 git clone https://github.com/NikoPushkin/audio-info-logger
 ```
+
 </li>
 <li><h4>Запустить install.sh с указанием интерпретатора:</h4>
+
 ```
 ./install.sh
 ```
+
 </li>
 <li><h4>Указать все необходимые ключи для работы с API в config.py</h4></li>
 
